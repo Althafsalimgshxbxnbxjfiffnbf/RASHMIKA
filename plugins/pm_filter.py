@@ -205,6 +205,22 @@ async def next_page(bot, query):
              InlineKeyboardButton(f"🎭 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
+        btn.insert(0,
+
+            [
+
+                InlineKeyboardButton(f'🎬 {search} 🎬', url='https://t.me/+JLuNC2rGfgQ0OGRl')
+
+            ]
+
+        )
+        btn.insert(1, 
+            [
+                InlineKeyboardButton(f'Files: {len(files)}', 'reqst1'),
+                InlineKeyboardButton(f'Movies', 'movss'),
+                InlineKeyboardButton(f'Series', 'moviis')
+            ]
+        )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🎭 𝗣𝗮𝗴𝗲 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
@@ -1209,7 +1225,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.DEPLOY_TXT,
             reply_markup=reply_markup,
             parse_mode='html'
-        )
+                )
+    elif query.data == "movss":
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ⪼ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ⪼ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ⪼ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴋɢꜰ ᴄʜᴀᴘᴛᴇʀ 2  2022\n\n✘ ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n©", show_alert=True)
+
+    elif query.data == "moviis":  
+        await query.answer("⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\nꜱᴇʀɪᴇꜱ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ\n⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ⪼ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ⪼ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ⪼ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ʟᴏᴋɪ S01 E01\n\n✘ ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)\n\n©", show_alert=True)   
+   
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='help'),
@@ -1354,6 +1376,22 @@ async def auto_filter(client, msg, spoll=False):
         btn.append(
             [InlineKeyboardButton(text=f"🎭 𝗣𝗮𝗴𝗲 1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="𝗡𝗲𝘅𝘁 ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+        )
+        btn.insert(0,
+
+            [
+
+                InlineKeyboardButton(f'🎬 {search} 🎬', url='https://t.me/+JLuNC2rGfgQ0OGRl')
+
+            ]
+
+        )
+        btn.insert(1, 
+            [
+                InlineKeyboardButton(f'Files: {len(files)}', 'reqst1'),
+                InlineKeyboardButton(f'Movies', 'movss'),
+                InlineKeyboardButton(f'Series', 'moviis')
+            ]
         )
     else:
         btn.append(
